@@ -2,12 +2,11 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 name 'MrNewbLootTables'
-description 'A dynamic loot table system for FiveM.'
+description 'A dynamic loot table system.'
 version '0.0.1'
 
 shared_scripts {
 	'src/shared/config.lua',
-	'src/shared/init.lua',
 }
 
 server_scripts {

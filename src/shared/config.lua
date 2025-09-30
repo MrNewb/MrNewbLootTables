@@ -15,7 +15,7 @@
 Config = {}
 
 Config.Utility = {
-    Debug = true, -- Set to true for debug mode, this will enable debug prints and some extra functionality.
+    Debug = false, -- Set to true for debug mode, this will enable debug prints
 }
 
 Config.LootTables = {
@@ -53,3 +53,5 @@ Config.LootTables = {
         { name = "night_vision", metadata = {}, min = 1, max = 1, chance = 15, shared = true },
     }
 }
+
+Bridge = exports.community_bridge:Bridge()
