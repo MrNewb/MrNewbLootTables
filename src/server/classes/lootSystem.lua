@@ -1,4 +1,3 @@
-print("[DEBUG] Loading loot system...")
 CurrentLoot = {}
 LootClass = {}
 LootClass.__index = LootClass
