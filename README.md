@@ -1,6 +1,6 @@
 # MrNewbLootTables
 **A centeralized loot table system for FiveM.**
-A flexible and configurable loot generation system that supports weighted random rolls, shared items, and automatic inventory integration using [Community Bridge](https://github.com/TheOrderFivem/community_bridge).
+A flexible and configurable loot generation system that supports weighted random rolls, shared items, and automatic inventory integration using [Community Bridge](https://github.com/MrNewb/community_bridge).
 
 [![Docs](https://img.shields.io/badge/Docs-GitBook-blue?style=for-the-badge&logo=gitbook)](https://mrnewbs-scrips.gitbook.io/guide)
 [![Discord](https://img.shields.io/discord/1204398264812830720?label=Discord&logo=discord&color=7289DA&style=for-the-badge)](https://discord.gg/mrnewbscripts)
@@ -23,7 +23,7 @@ A flexible and configurable loot generation system that supports weighted random
 
 ## Installation
 
-1. Install [Community Bridge](https://github.com/TheOrderFivem/community_bridge)
+1. Install [Community Bridge](https://github.com/MrNewb/community_bridge)
 2. Extract this resource into your `resources` folder
 3. Add `ensure MrNewbLootTables` to your `server.cfg`
 4. Configure your loot tables in `src/shared/config.lua`
@@ -80,7 +80,6 @@ exports['MrNewbLootTables']:RegisterLootTable('custom_table', {
 ## Pre-configured Loot Tables
 
 The resource comes with several example loot tables:
-- `pineapple robbery` - Basic robbery rewards
 - `convenience_store` - Store robbery loot
 - `bank_vault` - High-value bank heist rewards
 - `fishing_spot` - Fishing activity rewards

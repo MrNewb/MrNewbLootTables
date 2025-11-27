@@ -2,11 +2,6 @@ CurrentLoot = {}
 LootClass = {}
 LootClass.__index = LootClass
 
-local function debugModePrint(msg)
-    if not Config.Utility.Debug then return end
-    Bridge.Prints.Debug(msg)
-end
-
 ---Creates a new LootClass instance and registers it in the CurrentLoot table
 ---@param id string The unique identifier for this loot table
 ---@param contents table An array of loot items with structure: {name, metadata, min, max, chance, shared}
@@ -47,7 +42,7 @@ function LootClass:getSingleLootRoll()
         if roll <= cumulative then
             local count = math.random(item.min or 1, item.max or 1)
             if item.shared then
-                debugModePrint(("[DEBUG] Removing shared item '%s' from loot table '%s' after roll"):format(item.name, self.id))
+                DebugModePrint(("[DEBUG] Removing shared item '%s' from loot table '%s' after roll"):format(item.name, self.id))
                 self:removeLootFromLootTable(item)
             end
             return {name = item.name, count = count, metadata = item.metadata or {}, shared = item.shared or false}
@@ -65,7 +60,7 @@ end
 function LootClass:getMultipleLootRolls(maxRewards)
     local results = {}
     maxRewards = maxRewards or 1
-    debugModePrint(("[DEBUG] Getting %d loot rolls from table '%s'"):format(maxRewards, self.id))
+    DebugModePrint(("[DEBUG] Getting %d loot rolls from table '%s'"):format(maxRewards, self.id))
 
     local total = 0
     for _, item in ipairs(self.contents) do
@@ -89,7 +84,7 @@ function LootClass:getMultipleLootRolls(maxRewards)
                 }
                 table.insert(results, result)
 
-                debugModePrint(("[DEBUG] Selected %s x%d (Chance: %d, Shared: %s)"):format(result.name, result.count, item.chance, tostring(result.shared)))
+                DebugModePrint(("[DEBUG] Selected %s x%d (Chance: %d, Shared: %s)"):format(result.name, result.count, item.chance, tostring(result.shared)))
 
                 if item.shared then
                     self:removeLootFromLootTable(item)
@@ -220,20 +215,16 @@ exports('RegisterLootTable', RegisterLootTable)
 ---Internal function that builds and registers all loot tables from the Config.LootTables
 ---Called automatically when the resource starts
 ---@usage buildConfigLootTables() -- Called internally on resource start
-local function buildConfigLootTables()
+function BuildConfigLootTables()
     local lootTables = Config.LootTables
     if not lootTables then return print("[DEBUG] No loot tables found in config.") end
     for id, contents in pairs(lootTables) do
-        debugModePrint(("[DEBUG] Registering loot table '%s' from config."):format(id))
+        DebugModePrint(("[DEBUG] Registering loot table '%s' from config."):format(id))
         LootClass:new(id, contents)
     end
 end
 
-AddEventHandler('onResourceStart', function(resourceName)
-    if GetCurrentResourceName() ~= resourceName then return end
-    debugModePrint("[DEBUG] Resource started, building loot tables from config...")
-    buildConfigLootTables()
-end)
+
 
 --[[
 -- examples

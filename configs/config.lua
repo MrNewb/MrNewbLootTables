@@ -19,12 +19,6 @@ Config.Utility = {
 }
 
 Config.LootTables = {
-    ["pineapple robbery"] = {
-        { name = "water", metadata = {}, min = 1, max = 2, chance = 50, shared = false },
-        { name = "bread", metadata = {}, min = 1, max = 2, chance = 30, shared = false },
-        { name = "pineapple", metadata = {}, min = 1, max = 2, chance = 20, shared = true },
-    },
-
     ["convenience_store"] = {
         { name = "chips", metadata = {}, min = 1, max = 3, chance = 40, shared = false },
         { name = "soda", metadata = {}, min = 1, max = 2, chance = 35, shared = false },
@@ -53,5 +47,3 @@ Config.LootTables = {
         { name = "night_vision", metadata = {}, min = 1, max = 1, chance = 15, shared = true },
     }
 }
-
-Bridge = exports.community_bridge:Bridge()
