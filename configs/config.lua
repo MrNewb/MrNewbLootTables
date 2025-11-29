@@ -47,3 +47,31 @@ Config.LootTables = {
         { name = "night_vision", metadata = {}, min = 1, max = 1, chance = 15, shared = true },
     }
 }
+
+Config.JobPayouts = {
+    ["windowwashing"] = {
+        low_tier = { min = 50, max = 150 },
+        mid_tier = { min = 150, max = 300 },
+        high_tier = { min = 200, max = 500 },
+    },
+    ["builder"] = {
+        low_tier = { min = 50, max = 150 },
+        mid_tier = { min = 150, max = 300 },
+        high_tier = { min = 200, max = 500 },
+    },
+    ["delivery"] = {
+        low_tier = { min = 50, max = 150 },
+        mid_tier = { min = 150, max = 300 },
+        high_tier = { min = 200, max = 500 },
+    },
+    ["garbage"] = {
+        low_tier = { min = 50, max = 150 },
+        mid_tier = { min = 150, max = 300 },
+        high_tier = { min = 200, max = 500 },
+    },
+    ["oilrig"] = {
+        low_tier = { min = 50, max = 150 },
+        mid_tier = { min = 150, max = 300 },
+        high_tier = { min = 200, max = 500 },
+    },
+}

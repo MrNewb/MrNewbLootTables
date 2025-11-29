@@ -5,13 +5,16 @@ function DebugModePrint(msg)
     Bridge.Prints.Debug(msg)
 end
 
+
+if not IsDuplicityVersion() then return end
+
 AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     Bridge.Version.AdvancedVersionChecker("MrNewb/patchnotes", resourceName)
     DebugModePrint("[DEBUG] Resource started, building loot tables from config...")
     BuildConfigLootTables()
+    BuildConfigPayoutTables()
 end)
-
 -- CreateThread(function()
 -- 	Wait(10000)
 -- 	local lootShit = GetLootRoll("convenience_store", "single", 1, 1)
