@@ -10,6 +10,7 @@ end
 AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     Bridge.Version.AdvancedVersionChecker("MrNewb/patchnotes", resourceName)
+    Bridge.Version.AdvancedVersionChecker("MrNewb/patchnotes", "community_bridge")
     DebugModePrint("[DEBUG] Resource started, building loot tables from config...")
     BuildConfigLootTables()
     BuildConfigPayoutTables()
