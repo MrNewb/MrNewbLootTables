@@ -3,7 +3,8 @@ game 'gta5'
 lua54 'yes'
 name 'MrNewbLootTables'
 description 'A secure, easily configurable loot system and dynamic job payout system with runtime generation.'
-version '0.2.1'
+author "MrNewb"
+version '0.2.2'
 
 shared_scripts {
 	'core/init.lua',
@@ -18,8 +19,16 @@ server_scripts {
 	'modules/**/server.lua',
 }
 
+files {
+	'locales/*.json',
+}
+
 dependencies {
-	'/server:6116',
-	'/onesync',
-	'community_bridge'
+    '/server:6116',
+    '/onesync',
+    'community_bridge',
+}
+
+escrow_ignore {
+	'**/*.lua',
 }

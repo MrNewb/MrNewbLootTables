@@ -8,8 +8,10 @@
 --									          							  |_|
 --
 --		  Need support? Join our Discord server for help: https://discord.gg/mrnewbscripts
+--		  Check out my paid scripts and freebies at https://mrnewbscripts.tebex.io/
 --		  If you need help with configuration or have any questions, please do not hesitate to ask.
 --		  Docs Are Always Available At -- https://mrnewbs-scrips.gitbook.io/guide
+--
 
 
 Config = {}
@@ -24,20 +26,6 @@ Config.LootTables = {
         { name = "soda", metadata = {}, min = 1, max = 2, chance = 35, shared = false },
         { name = "lottery_ticket", metadata = {}, min = 1, max = 1, chance = 10, shared = true },
         { name = "candy_bar", metadata = {}, min = 1, max = 5, chance = 15, shared = false },
-    },
-
-    ["bank_vault"] = {
-        { name = "cash_stack", metadata = {}, min = 500, max = 1500, chance = 50, shared = false },
-        { name = "gold_bar", metadata = {}, min = 1, max = 3, chance = 30, shared = true },
-        { name = "diamond", metadata = {}, min = 1, max = 2, chance = 15, shared = true },
-        { name = "bond_certificate", metadata = {}, min = 1, max = 5, chance = 5, shared = false },
-    },
-
-    ["fishing_spot"] = {
-        { name = "fish", metadata = { type = "bass" }, min = 1, max = 3, chance = 60, shared = false },
-        { name = "old_boot", metadata = {}, min = 1, max = 1, chance = 20, shared = false },
-        { name = "treasure_chest", metadata = {}, min = 1, max = 1, chance = 5, shared = true },
-        { name = "seaweed", metadata = {}, min = 2, max = 5, chance = 15, shared = false },
     },
 
     ["military_cache"] = {
