@@ -1,34 +1,33 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
+
 name 'MrNewbLootTables'
-description 'A secure, easily configurable loot system and dynamic job payout system with runtime generation.'
-author "MrNewb"
-version '0.2.2'
+description 'Configurable loot tables and dynamic job payout generation'
+author 'MrNewb'
+version '0.4.0'
 
 shared_scripts {
-	'core/init.lua',
-}
-
-client_scripts {
-	'modules/**/client.lua',
+    '@ox_lib/init.lua',
+    '@Newb_Bridge/import.lua',
 }
 
 server_scripts {
-	'configs/config.lua',
-	'modules/**/server.lua',
+    'configs/config.lua',
+    'resource/server/debug.lua',
+    'resource/server/loot.lua',
+    'resource/server/payout.lua',
 }
 
-files {
-	'locales/*.json',
+client_scripts {
+    'resource/client/payout.lua',
 }
 
 dependencies {
-    '/server:6116',
-    '/onesync',
-    'community_bridge',
+    'ox_lib',
+    'Newb_Bridge',
 }
 
 escrow_ignore {
-	'**/*.lua',
+    '**/*.lua',
 }
